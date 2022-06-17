@@ -3,12 +3,18 @@ import math
 import random
 
 # calculo da função
+
+
 def calc(a, b):
-    fun = (math.sin(a)*3 * math.sin(b))/(a*3 * (a+b))
+    fun = (math.sin(a)**3 * math.sin(b))/(a**3 * (a+b))
     return fun
 
 
+# print(calc(0.001, 0.01))
+
 # calculo da variavel x para binario
+
+
 def calcXBin():
     numeroBinX = []
     for i in range(8):
@@ -76,14 +82,18 @@ def calcBin2Float(numeroBin):
     # concatenação da parte inteira com a fracionaria
     numero = numDec + numDec2
     print(numero)
+    return numero
+
 
 # repetindo uma população
-for i in range(5):
-    print("Passo:", i)
-    print("X:")
-    numX = calcXBin()
-    calcBin2Float(numX)
-    numY = calcYBin()
-    print("Y:")
-    calcBin2Float(numY)
+for i in range(100):
     print("\n")
+    print("Passo:", i)
+    numX = calcXBin()
+    numXF = calcBin2Float(numX)
+    print("X - Binário:", numX, " X - decimal:", numXF)
+    print("------------------------")
+    numY = calcYBin()
+    numYF = calcBin2Float(numY)
+    print("Y - Binário:", numY, " Y - decimal:", numYF)
+    print("Cálculo: ", calc(numXF, numYF))
