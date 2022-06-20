@@ -1,5 +1,6 @@
 import math
 
+
 def calcBin2Float(numeroBin):
     parteInt = []
     parteDec = []
@@ -9,8 +10,8 @@ def calcBin2Float(numeroBin):
     for j in range(4, 8):
         parteDec.append(numeroBin[j])
 
-    print("Parte Int:", parteInt)
-    print("Parte Dec:", parteDec)
+    #print("Parte Int:", parteInt)
+    #print("Parte Dec:", parteDec)
 
     numDec2 = 0.0
     # convertendo para decimal, a parte inteira
@@ -21,9 +22,9 @@ def calcBin2Float(numeroBin):
     for i in range(4):
         numDec2 += parteDec[i]/2**(i+1)
 
-    print(numDec)
-    print(numDec2)
+    # print(numDec)
+    # print(numDec2)
     # concatenação da parte inteira com a fracionaria
     numero = numDec + numDec2
-    print(numero)
+    # print(numero)
     return numero
