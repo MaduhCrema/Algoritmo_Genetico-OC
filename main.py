@@ -2,6 +2,7 @@ import math
 from bin2float import calcBin2Float
 from population import calcXBin
 from population import calcYBin
+from genetic import cruzamento
 
 #Calculo da função
 def calc(a, b):

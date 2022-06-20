@@ -21,7 +21,6 @@ def calcXBin():
     if(numeroBinX == [0, 0, 0, 0, 0, 0, 0, 0]):
         numeroBinX[7] = 1
 
-    print(numeroBinX)
     return numeroBinX
 
 #Calculo da variavel y para binario
@@ -38,6 +37,4 @@ def calcYBin():
         numeroBinY[3] = numeroBinY[3] and int(not(numeroBinY[2]))
         for j in range(4):
             numeroBinY[j+4] = 0
-
-    print(numeroBinY)
     return numeroBinY
