@@ -3,28 +3,28 @@ import math
 import random
 from bin2float import calcBin2Float
 
-# calculo da variavel X para binario
+#Calculo da variavel X para binario
 def calcXBin():
     numeroBinX = []
     for i in range(8):
         numero = random.getrandbits(1)
         numeroBinX.append(numero)
 
-    # para limitar caso ele chegue a 10
+    #Para limitar caso ele chegue a 10
     if (numeroBinX[0] == 1):
         numeroBinX[1] = numeroBinX[1] and 0
         numeroBinX[2] = numeroBinX[2] or 0
         numeroBinX[3] = numeroBinX[3] and int(not(numeroBinX[2]))
         for j in range(4):
             numeroBinX[j+4] = 0
-    # se tudo for 0, mudar o ultimo para 1, pois x não aceita 0
+    #Se tudo for 0, mudar o ultimo para 1, pois x não aceita 0
     if(numeroBinX == [0, 0, 0, 0, 0, 0, 0, 0]):
         numeroBinX[7] = 1
 
     print(numeroBinX)
     return numeroBinX
 
-# calculo da variavel y para binario
+#Calculo da variavel y para binario
 def calcYBin():
     numeroBinY = []
     for i in range(8):
@@ -41,16 +41,3 @@ def calcYBin():
 
     print(numeroBinY)
     return numeroBinY
-
-# repetindo uma população
-for i in range(100):
-    print("\n")
-    print("Passo:", i)
-    numX = calcXBin()
-    numXF = calcBin2Float(numX)
-    print("X - Binário:", numX, " X - decimal:", numXF)
-    print("------------------------")
-    numY = calcYBin()
-    numYF = calcBin2Float(numY)
-    print("Y - Binário:", numY, " Y - decimal:", numYF)
-    print("Cálculo: ", calc(numXF, numYF))
