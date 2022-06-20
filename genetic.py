@@ -28,9 +28,9 @@ def cruzamento(pai1, pai2):
         filho2[i+2] = pai1[i+2]
     
     #Realização da mutação dos filhos
-    if( random.uniform(0, 100) < 5 ):
+    if( random.uniform(0, 100) <= 5 ):
         filho1 = mutacao(filho1)
-    if( random.uniform(0, 100) < 5 ):
+    if( random.uniform(0, 100) <= 5 ):
         filho2 = mutacao(filho2)
 
     return filho1, filho2
