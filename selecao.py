@@ -23,15 +23,15 @@ def roleta(x, tamPop):
     somatorio = 0
     for i in range(tamPop):
         somatorio += x[i]['Fitness']
-    print("SOMA = ", somatorio)
+    #print("SOMA = ", somatorio)
     # colocando em escala de 0 a 100
     for i in range(tamPop):
         roleta.append(abs((x[i]['Fitness'] * 100) / somatorio))
-    print("roleta = ", roleta)
+    #print("roleta = ", roleta)
 
     # pega um numero entre 0 e 100, e seleciona o numeor mais proximo dele
     sel = random.randrange(0, 100)
-    print("Numero random = ", sel)
+    #print("Numero random = ", sel)
     selecionado = proximo(roleta, sel)
 
     # procura a posição do numero selecionado

@@ -5,7 +5,7 @@ def proximo(lst, K):
 
 
 def calcElitismo(Pop, n):
-    fitness = 0.99082
+    fitness = 0.13765
     pos = 0
     vetFit = []
     for i in range(0, n):
@@ -14,7 +14,7 @@ def calcElitismo(Pop, n):
     selecionado = proximo(vetFit, fitness)
     # procura a posição do numero selecionado
     for i in range(n):
-        if(Pop[i] == selecionado):
+        if(Pop[i]['Fitness'] == selecionado):
             pos = i
 
     return(selecionado, pos)

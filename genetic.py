@@ -34,5 +34,5 @@ def cruzamento(p1, p2):
     filho1 = mutacao(filho1)
     filho2 = mutacao(filho2)
 
-    print(filho1, filho2)
+    #print(filho1, filho2)
     return filho1, filho2
