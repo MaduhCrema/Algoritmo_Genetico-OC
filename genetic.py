@@ -7,7 +7,7 @@ import random
 def mutacao(filho):
 
     for i in range(8):
-        if(random.uniform(0, 100) <= 75):
+        if(random.uniform(0, 100) <= 5):
             if(filho[i] == 0):
                 filho[i] = 1
             else:
