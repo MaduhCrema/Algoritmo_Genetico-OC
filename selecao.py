@@ -6,36 +6,37 @@ from population import calcXBin
 from population import calcYBin
 
 # Calculo da função
+
+
 def calc(a, b):
     fun = (math.sin(a)**3 * math.sin(b))/(a**3 * (a+b))
     return fun
 
-def roleta(vetPop, nElementos):
-    soma = 0.0
-    conta = 0
-    vetAptidao = []
-    for i in range(nElementos):
-        soma += vetPop[i]['Fitness']
-    print("Soma = ", soma)
 
-    for i in range(nElementos):
-        conta = abs((vetPop[i]['Fitness']* 100)/soma)
-        vetAptidao.append(conta)
+def proximo(lst, K):
 
-    #print("-----------Vetor de Aptidão fitness----------")
-    #print(vetAptidao)
+    return lst[min(range(len(lst)), key=lambda i: abs(lst[i]-K))]
 
-    for j in range(nElementos):
-        random.seed()
-        r = random.uniform(0, soma)
-        somaT = 0
-        i = 0
-        while(r >= somaT):
-            somaT += vetPop[i]['Fitness']
-            i += 1
-            if i >= nElementos:
-                break
-        cromo = vetPop[i-1]['Fitness']
-    print("Melhor caso = ", cromo)
-    return cromo
 
+def roleta(x, tamPop):
+    roleta = []
+    somatorio = 0
+    for i in range(tamPop):
+        somatorio += x[i]['Fitness']
+    print("SOMA = ", somatorio)
+    # colocando em escala de 0 a 100
+    for i in range(tamPop):
+        roleta.append(abs((x[i]['Fitness'] * 100) / somatorio))
+    print("roleta = ", roleta)
+
+    # pega um numero entre 0 e 100, e seleciona o numeor mais proximo dele
+    sel = random.randrange(0, 100)
+    print("Numero random = ", sel)
+    selecionado = proximo(roleta, sel)
+
+    # procura a posição do numero selecionado
+    for i in range(tamPop):
+        if(roleta[i] == selecionado):
+            pos = i
+
+    return selecionado, pos

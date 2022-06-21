@@ -9,9 +9,12 @@ from selecao import roleta
 
 somatoria = 0.0
 # Calculo da função
+
+
 def calc(a, b):
     fun = (math.sin(a)**3 * math.sin(b))/(a**3 * (a+b))
     return fun
+
 
 """@dataclass
 class Individuo:
@@ -22,19 +25,18 @@ class Individuo:
 
 
 # Criando as populações
-Populacao= []
+Populacao = []
 for i in range(10):
-    cromossomo = {'X - Bin': calcXBin(), 'Y - Bin': calcYBin(), 'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0, 'Aptidao': 0.0}
+    cromossomo = {'X - Bin': calcXBin(), 'Y - Bin': calcYBin(),
+                  'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0, 'Aptidao': 0.0}
     cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
     cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])
     cromossomo['Fitness'] = calc(cromossomo['X - Dec'], cromossomo['Y - Dec'])
-    somatoria += cromossomo['Fitness']
     Populacao.append(cromossomo)
+# print(Populacao)
 
-paiX = roleta(Populacao, 10)
-paiY = roleta(Populacao, 10)
-print("Pai X = ", paiX)
-print("Pai Y = ", paiY)
+paiX, pos1 = roleta(Populacao, 10)
+paiY, pos2 = roleta(Populacao, 10)
+print("Pai X = ", paiX, "Posição = ", pos1)
+print("Pai Y = ", paiY, "Posição = ", pos2)
 # cruzamento de x
-
-
