@@ -17,11 +17,11 @@ def mutacao(filho):
 # Função para realizar o cruzamento gentico
 
 
-def cruzamento(p1, p2):
+def cruzamento(p1):
     filho1 = p1['X - Bin']
-    filho2 = p2['Y - Bin']
+    filho2 = p1['Y - Bin']
     pai1 = p1['X - Bin']
-    pai2 = p2['Y - Bin']
+    pai2 = p1['Y - Bin']
     # Realização do cruzamento dos cromossomos dos pais
     for i in range(2, 5):
         filho1[i] = pai2[i]

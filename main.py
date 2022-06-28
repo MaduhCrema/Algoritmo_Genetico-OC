@@ -69,25 +69,50 @@ while(j < nElementos - 1):
     # se os filhos fazerm parte da geração seguinte
     if(random.uniform(0, 100) <= 85):
         # print("CRUZA")
-        filho1, filho2 = cruzamento(Pai1, Pai2)
+        filhoX, filhoX = cruzamento(Pai1)
+        filhoY, filhoY = cruzamento(Pai2)
 
-        filho1 = verificaX(filho1)
-        filho2 = verificaY(filho2)
-        # append
-        cromossomo = {'X - Bin': filho1, 'Y - Bin': filho2,
+        filhoX = verificaX(filhoX)
+        filhoX = verificaY(filhoX)
+        filhoY = verificaX(filhoY)
+        filhoY = verificaY(filhoY)
+
+        # append Filho 01
+        cromossomo = {'X - Bin': filhoX, 'Y - Bin': filhoX,
                       'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0}
         cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
         cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])
         cromossomo['Fitness'] = calc(
             cromossomo['X - Dec'], cromossomo['Y - Dec'])
         novaPop.append(cromossomo)
+
+        # append Filho 02
+        cromossomo = {'X - Bin': filhoY, 'Y - Bin': filhoY,
+                      'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0}
+        cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
+        cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])
+        cromossomo['Fitness'] = calc(
+            cromossomo['X - Dec'], cromossomo['Y - Dec'])
+        novaPop.append(cromossomo)
+
     # se os pais fazem parte da geração seguinte
     else:
-        PaiX2 = Pai1['X - Bin']
-        PaiY2 = Pai1['Y - Bin']
-        # print("PAIS = ", PaiX2, PaiY2)
+        PaiX = Pai1['X - Bin']
+        PaiX = Pai1['Y - Bin']
+        PaiY = Pai2['X - Bin']
+        PaiY = Pai2['Y - Bin']
+
         # append
-        cromossomo = {'X - Bin': PaiX2, 'Y - Bin': PaiY2,
+        cromossomo = {'X - Bin': PaiX, 'Y - Bin': PaiX,
+                      'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0}
+        cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
+        cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])
+        cromossomo['Fitness'] = calc(
+            cromossomo['X - Dec'], cromossomo['Y - Dec'])
+        novaPop.append(cromossomo)
+
+        # append
+        cromossomo = {'X - Bin': PaiY, 'Y - Bin': PaiY,
                       'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0}
         cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
         cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])
@@ -134,25 +159,51 @@ while(cont <= Geracao):
         # se os filhos fazerm parte da geração seguinte
         if(random.uniform(0, 100) <= 85):
             # print("CRUZA")
-            filho1, filho2 = cruzamento(Pai1, Pai2)
+            filhoX, filhoX = cruzamento(Pai1)
+            filhoY, filhoY = cruzamento(Pai2)
 
-            filho1 = verificaX(filho1)
-            filho2 = verificaY(filho2)
-            # append
-            cromossomo = {'X - Bin': filho1, 'Y - Bin': filho2,
+            filhoX = verificaX(filhoX)
+            filhoX = verificaY(filhoX)
+            filhoY = verificaX(filhoY)
+            filhoY = verificaY(filhoY)
+
+            # append Filho 01
+            cromossomo = {'X - Bin': filhoX, 'Y - Bin': filhoX,
                           'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0}
             cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
             cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])
             cromossomo['Fitness'] = calc(
                 cromossomo['X - Dec'], cromossomo['Y - Dec'])
             novaPop.append(cromossomo)
+
+            # append Filho 02
+            cromossomo = {'X - Bin': filhoY, 'Y - Bin': filhoY,
+                          'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0}
+            cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
+            cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])
+            cromossomo['Fitness'] = calc(
+                cromossomo['X - Dec'], cromossomo['Y - Dec'])
+            novaPop.append(cromossomo)
+
         # se os pais fazem parte da geração seguinte
         else:
-            PaiX2 = Pai1['X - Bin']
-            PaiY2 = Pai1['Y - Bin']
+            PaiX = Pai1['X - Bin']
+            PaiX = Pai1['Y - Bin']
+            PaiY = Pai2['X - Bin']
+            PaiY = Pai2['Y - Bin']
             # print("PAIS = ", PaiX2, PaiY2)
+
             # append
-            cromossomo = {'X - Bin': PaiX2, 'Y - Bin': PaiY2,
+            cromossomo = {'X - Bin': PaiX, 'Y - Bin': PaiX,
+                          'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0}
+            cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
+            cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])
+            cromossomo['Fitness'] = calc(
+                cromossomo['X - Dec'], cromossomo['Y - Dec'])
+            novaPop.append(cromossomo)
+
+            # append
+            cromossomo = {'X - Bin': PaiY, 'Y - Bin': PaiY,
                           'X - Dec': 0.0, 'Y - Dec': 0.0, 'Fitness': 0.0}
             cromossomo['X - Dec'] = calcBin2Float(cromossomo['X - Bin'])
             cromossomo['Y - Dec'] = calcBin2Float(cromossomo['Y - Bin'])

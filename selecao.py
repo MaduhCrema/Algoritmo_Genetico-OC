@@ -19,6 +19,7 @@ def proximo(lst, K):
 
 
 def roleta(x, tamPop):
+    aux = []
     roleta = []
     somatorio = 0
     for i in range(tamPop):
@@ -26,8 +27,13 @@ def roleta(x, tamPop):
     #print("SOMA = ", somatorio)
     # colocando em escala de 0 a 100
     for i in range(tamPop):
-        roleta.append(abs((x[i]['Fitness'] * 100) / somatorio))
+        aux.append(abs((x[i]['Fitness'] * 100) / somatorio))
     #print("roleta = ", roleta)
+
+    roleta.append(aux[0])
+    for i in range(1, tamPop):
+        elem = aux[i] + aux[i-1]
+        roleta.append(elem)
 
     # pega um numero entre 0 e 100, e seleciona o numeor mais proximo dele
     sel = random.randrange(0, 100)
